@@ -9,9 +9,9 @@ public class CubeExplosion : MonoBehaviour
 
     private void OnDestroy()
     {
-        var cubes = Physics.OverlapSphere(transform.position, _explosionRadius).Where(o => o.TryGetComponent<CubeDivider>(out _));
+        var cubes = Physics.OverlapSphere(transform.position, _explosionRadius).Where(o => o.TryGetComponent<CubeDivider>(out _)).Select(o => o.GetComponent<Rigidbody>());
 
         foreach (var cube in cubes)        
-            cube.GetComponent<Rigidbody>().AddExplosionForce(_explosionForce, transform.position, _explosionRadius);        
+            cube.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);        
     }
 }

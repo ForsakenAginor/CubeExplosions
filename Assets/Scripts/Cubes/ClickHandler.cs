@@ -5,6 +5,6 @@ public class ClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        GetComponent<CubeDivider>().Divide();
+        GetComponent<CubeDivider>().Destroy();
     }
 }

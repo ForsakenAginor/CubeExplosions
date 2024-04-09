@@ -22,15 +22,18 @@ public class CubeDivider : MonoBehaviour
         transform.localScale = _currentScale;
     }
 
-    public void Divide()
+    public void Destroy()
     {
         if (_divideChance >= Random.value)
-        {
-            for (int i = 0; i < _subCubeQuantity; i++)            
-                Instantiate(_cubePrefab, transform.position, Quaternion.identity).
-                    Init(_divideChance * _multiplier, _currentScale * _multiplier);            
-        }
+            Divide();
 
         Destroy(gameObject);
+    }
+
+    private void Divide()
+    {
+        for (int i = 0; i < _subCubeQuantity; i++)
+            Instantiate(_cubePrefab, transform.position, Quaternion.identity).
+                Init(_divideChance * _multiplier, _currentScale * _multiplier);
     }
 }
