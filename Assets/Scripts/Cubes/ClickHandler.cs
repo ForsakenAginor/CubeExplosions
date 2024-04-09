@@ -1,17 +1,10 @@
-using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ClickHandler : MonoBehaviour
+public class ClickHandler : MonoBehaviour, IPointerClickHandler
 {
-    private void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var hits = Physics.RaycastAll(ray).Where(o => o.collider.TryGetComponent(typeof(CubeDivider), out _)).ToList();
-
-            if(hits.Count > 0)            
-                hits.First().collider.GetComponent<CubeDivider>().Divide();            
-        }
+        GetComponent<CubeDivider>().Divide();
     }
 }
