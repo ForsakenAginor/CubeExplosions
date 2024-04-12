@@ -25,7 +25,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Buttons
+  m_Name: ButtonsEffects
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 1c36711330d4ed347a81bf1bb2cf78e7
   m_Children: []
@@ -67,7 +67,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 3c64528abd4aa73498fb70e593a05b13
+    name: ButtonEffectsVolume
+  - guid: 40014311ba3986e4aacba7c80ae0f3d5
+    name: MasterVolume
+  - guid: f54c2aa64d9103b45b998962464e2176
+    name: MusicVolume
   m_AudioMixerGroupViews:
   - guids:
     - b5ad8850647742f42b932f081f0c34ac
